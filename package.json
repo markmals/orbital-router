@@ -1,0 +1,49 @@
+{
+    "name": "package-name",
+    "version": "0.0.0",
+    "description": "",
+    "repository": "markmals/package-name",
+    "license": "MIT",
+    "sideEffects": false,
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs"
+        }
+    },
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "unbuild",
+        "format": "prettier -w .",
+        "lint": "eslint",
+        "lint-fix": "eslint --fix",
+        "dev": "vitest dev",
+        "test": "vitest run",
+        "prepack": "unbuild",
+        "release": "npm run build && np"
+    },
+    "devDependencies": {
+        "typescript": "latest",
+        "unbuild": "latest",
+        "vitest": "latest",
+        "np": "latest",
+        "prettier": "latest",
+        "eslint": "latest",
+        "@typescript-eslint/eslint-plugin": "latest",
+        "@typescript-eslint/parser": "latest"
+    },
+    "prettier": {
+        "printWidth": 100,
+        "tabWidth": 4,
+        "semi": false,
+        "arrowParens": "avoid"
+    },
+    "np": {
+        "yarn": false
+    }
+}
