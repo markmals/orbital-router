@@ -1,18 +1,12 @@
-# Package Name
+# Orbital Router
 
-Package description
+A router for Preact and `@preact/signals` that uses `@remix-run/router` under the hood.
 
 ## Installation
 
 ```sh
 # npm
-npm install package
-```
-
-## Usage
-
-```typescript
-import {} from "package"
+npm install orbital-router
 ```
 
 ## License

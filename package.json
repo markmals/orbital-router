@@ -1,41 +1,50 @@
 {
-    "name": "package-name",
-    "version": "0.0.0",
+    "name": "orbital-router",
+    "version": "0.1.0",
     "description": "",
-    "repository": "markmals/package-name",
+    "repository": "markmals/orbital-router",
     "license": "MIT",
     "sideEffects": false,
     "type": "module",
     "exports": {
         ".": {
-            "types": "./dist/index.d.ts",
-            "import": "./dist/index.mjs"
+            "import": "./src/index.ts"
         }
     },
-    "module": "./dist/index.mjs",
-    "types": "./dist/index.d.ts",
+    "module": "./src/index.ts",
     "files": [
         "dist"
     ],
     "scripts": {
-        "build": "unbuild",
+        "build": "vite build",
         "format": "prettier -w .",
         "lint": "eslint",
         "lint-fix": "eslint --fix",
         "dev": "vitest dev",
         "test": "vitest run",
-        "prepack": "unbuild",
-        "release": "npm run build && np"
+        "prepack": "vite build"
+    },
+    "dependencies": {
+        "@remix-run/router": "^1.8.0",
+        "tiny-invariant": "^1.3.1"
+    },
+    "peerDependencies": {
+        "@preact/signals": ">=1.2.0",
+        "preact": ">=10.17.0"
     },
     "devDependencies": {
-        "typescript": "latest",
-        "unbuild": "latest",
-        "vitest": "latest",
-        "np": "latest",
-        "prettier": "latest",
-        "eslint": "latest",
+        "@preact/preset-vite": "^2.5.0",
+        "@preact/signals": "^1.2.1",
         "@typescript-eslint/eslint-plugin": "latest",
-        "@typescript-eslint/parser": "latest"
+        "@typescript-eslint/parser": "latest",
+        "eslint": "latest",
+        "preact": "^10.17.1",
+        "prettier": "latest",
+        "typescript": "^5.2.2",
+        "unbuild": "latest",
+        "vite": "^4.4.9",
+        "vite-plugin-dts": "^3.5.3",
+        "vitest": "latest"
     },
     "prettier": {
         "printWidth": 100,
