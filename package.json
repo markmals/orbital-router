@@ -24,7 +24,7 @@
         "lint-fix": "eslint --fix",
         "dev": "vitest dev",
         "test": "vitest run",
-        "prepack": "vite build"
+        "prepublishOnly": "vite build"
     },
     "dependencies": {
         "@remix-run/router": "^1.8.0",
