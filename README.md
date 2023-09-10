@@ -1,6 +1,6 @@
 # Orbital Router
 
-A router for Preact and `@preact/signals` that uses `@remix-run/router` under the hood.
+A nested router with parallel data fetching & mutations for Preact & `@preact/signals` that uses `@remix-run/router` under the hood.
 
 ## Installation
 

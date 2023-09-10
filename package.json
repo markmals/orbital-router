@@ -1,17 +1,19 @@
 {
     "name": "orbital-router",
     "version": "0.1.0",
-    "description": "",
+    "description": "A nested router with parallel data fetching & mutations for Preact Signals",
     "repository": "markmals/orbital-router",
     "license": "MIT",
     "sideEffects": false,
     "type": "module",
     "exports": {
         ".": {
-            "import": "./src/index.ts"
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs"
         }
     },
-    "module": "./src/index.ts",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
     "files": [
         "dist"
     ],
