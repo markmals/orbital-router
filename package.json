@@ -1,5 +1,5 @@
 {
-    "name": "orbital-router",
+    "name": "@orbital-js/router",
     "version": "0.1.0",
     "description": "A nested router with parallel data fetching & mutations for Preact Signals",
     "repository": "markmals/orbital-router",
