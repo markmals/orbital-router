@@ -6,7 +6,7 @@ A nested router with parallel data fetching & mutations for Preact & `@preact/si
 
 ```sh
 # npm
-npm install orbital-router
+npm install @orbital-js/router
 ```
 
 ## License
