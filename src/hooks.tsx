@@ -9,7 +9,7 @@ import {
     createPath,
     resolveTo,
 } from "@remix-run/router"
-import { useContext, useEffect, useMemo, useState } from "preact/hooks"
+import { useContext, useEffect, useMemo } from "preact/hooks"
 import { FormImpl } from "./internal/components/FormImpl"
 import { AwaitContext, RouteErrorContext } from "./internal/context"
 import { useRouteContext, useRouterContext } from "./internal/hooks"
@@ -76,6 +76,7 @@ export function useRouteError<T = unknown>(): ReadonlySignal<T> {
     return useComputed(() => (errorCtx?.error || ctx.router.state.errors?.[routeId]) as T)
 }
 
+// FIXME: Make this signal-based
 /**
  * Returns the happy-path data from the nearest ancestor <Await /> value
  */
@@ -84,6 +85,7 @@ export function useAsyncValue(): unknown {
     return value?._data
 }
 
+// FIXME: Make this signal-based
 /**
  * Returns the error from the nearest ancestor <Await /> value
  */
@@ -174,7 +176,7 @@ export function useFetcher<TData = unknown>(): FetcherWithComponents<TData> {
     let { router } = useRouterContext()
     let { id } = useRouteContext()
     let defaultAction = useFormAction()
-    let [fetcherKey] = useState(() => String(++fetcherId))
+    let fetcherKey = useMemo(() => String(++fetcherId), [])
     let fetcher = useSignal<Fetcher<TData>>(router.getFetcher<TData>(fetcherKey))
 
     useEffect(() => {
@@ -186,7 +188,7 @@ export function useFetcher<TData = unknown>(): FetcherWithComponents<TData> {
             unsubscribe()
             router.deleteFetcher(fetcherKey)
         }
-    }, [fetcherKey])
+    }, [])
 
     function Form({ replace = false, onSubmit, children, ...props }: FetcherFormProps) {
         return (

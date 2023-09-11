@@ -33,7 +33,7 @@ export function DefaultErrorComponent() {
             <p>💿 Hey developer 👋</p>
             <p>
                 You can provide a way better UX than this when your app throws errors by providing
-                your own <code style={codeStyles}>errorElement</code>
+                your own <code style={codeStyles}>ErrorBoundary</code>
                 props on your routes.
             </p>
         </>
